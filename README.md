@@ -198,9 +198,7 @@ if v := math.Pow(x, n); v < lim {
 
 Также в Golang существует конструкция `switch`, элегантный вариант написания нескольких условий `if-else`, в отличии от других языков `switch` в Golang, выполняет первый подходящий `case`, т.к ставит в конце каждого `case` конструкцию `break` автоматически.
 
-
 ### (???) Another important difference is that Go's switch cases need not be constants, and the values involved need not be integers. (???)
-
 
 В конструкции `switch` кейсы выполняются сверху вних, останавливаясь когда достигнут правильный кейс.
 
@@ -277,7 +275,6 @@ func main(){
 
 #### Structs, Struct Fields, Pointers to structs, Struct Literals
 
-
 `struct` - это набор полей.
 
 ```
@@ -340,7 +337,7 @@ func main() {
 {1 2}
 ```
 
-#### Arrays
+#### Arrays, Slices, Slices are like references to arrays
 
 Выражение `[n]T` означает объявление массива `n`- значений, типа `T`.
 
@@ -366,6 +363,8 @@ var a [10]int
 `a[1:4]`
 
 Срезы не хранят никакую информацию, они только указывают на отрезок из массива. Изменение элемента среза также изменит элемент соответствующего ему массива. Также другие срезы которые ссылаются на этот массив потерпят те же изменения.
+
+#### Slice literals, Slice defaults, Slice length and capacity, Nil slices
 
 Литерал среза это как литерал массива без длины.
 
@@ -406,6 +405,8 @@ a[:]
 Нулевое значени для среза это `nil`
 
 `nil` срез имеет длину 0 и не имеет массива.
+
+#### Creating a slice with make, Slices of slices, Appending to a slice
 
 Срезы также можно создать внутренней функцией `make`, вот так можно создать динамически размеренный массив
 
